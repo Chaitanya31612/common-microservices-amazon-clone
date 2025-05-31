@@ -2,7 +2,17 @@ import { Kafka } from 'kafkajs';
 
 // Singleton class to manage Kafka client
 export class KafkaWrapper {
+  private static instance: KafkaWrapper;
   private _client?: Kafka;
+
+  private constructor() {}
+
+  public static getInstance(): KafkaWrapper {
+    if (!KafkaWrapper.instance) {
+      KafkaWrapper.instance = new KafkaWrapper();
+    }
+    return KafkaWrapper.instance;
+  }
 
   get client() {
     if (!this._client) {
@@ -22,4 +32,5 @@ export class KafkaWrapper {
   }
 }
 
-export const kafka = new KafkaWrapper();
+// Export a singleton instance
+export const kafka = KafkaWrapper.getInstance();
