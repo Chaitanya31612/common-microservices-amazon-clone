@@ -9,9 +9,18 @@ export interface OrderCreatedEvent {
     status: OrderStatus;
     userId: string;
     expiresAt: string;
-    ticket: {
-      id: string;
-      price: number;
-    };
+    products: Array<{
+      product: {
+        id: number;
+        title: string;
+        price: number;
+        description: string;
+        category: string;
+        image: string;
+      };
+      quantity: number;
+    }>;
+    // Calculate total price for payments service
+    totalPrice: number;
   };
 }
