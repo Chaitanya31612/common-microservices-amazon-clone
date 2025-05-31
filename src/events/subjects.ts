@@ -1,11 +1,11 @@
 export enum Subjects {
   // Remove unused ticket events
   
-  OrderCreated = "order:created",
-  OrderUpdated = "order:updated",
-  OrderCancelled = "order:cancelled",
+  OrderCreated = "order_created",
+  OrderUpdated = "order_updated",
+  OrderCancelled = "order_cancelled",
 
-  PaymentCreated = "payment:created",
-  PaymentSucceeded = "payment:succeeded",
-  PaymentFailed = "payment:failed",
+  PaymentCreated = "payment_created",
+  PaymentSucceeded = "payment_succeeded",
+  PaymentFailed = "payment_failed",
 }
